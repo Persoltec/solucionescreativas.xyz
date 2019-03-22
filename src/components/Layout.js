@@ -1,54 +1,75 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import React from "react"
+import { Link } from "gatsby"
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-  return (
-    <div>
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+import { rhythm, scale } from "../utils/typography"
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/img/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        />
+class Layout extends React.Component {
+  render() {
+    const { location, title, children } = this.props
+    const rootPath = `${__PATH_PREFIX__}/`
+    let header
 
-        <link
-          rel="mask-icon"
-          href="/img/safari-pinned-tab.svg"
-          color="#ff4400"
-        />
-        <meta name="theme-color" content="#fff" />
-
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
-      </Helmet>
-      <Navbar />
-      <div>{children}</div>
-      <Footer />
-    </div>
-  )
+    if (location.pathname === rootPath) {
+      header = (
+        <h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+      )
+    } else {
+      header = (
+        <h3
+          style={{
+            fontFamily: `Montserrat, sans-serif`,
+            marginTop: 0,
+          }}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h3>
+      )
+    }
+    return (
+      <div
+        style={{
+          marginLeft: `auto`,
+          marginRight: `auto`,
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }}
+      >
+        <header>{header}</header>
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </div>
+    )
+  }
 }
 
-export default TemplateWrapper
+export default Layout

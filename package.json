@@ -1,58 +1,59 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "gatsby-starter-blog",
+  "private": true,
+  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
   "dependencies": {
-    "bulma": "^0.7.0",
-    "gatsby": "^2.1.34",
-    "gatsby-image": "^2.0.23",
-    "gatsby-plugin-netlify": "^2.0.6",
-    "gatsby-plugin-netlify-cms": "^3.0.15",
-    "gatsby-plugin-purgecss": "^3.1.0",
-    "gatsby-plugin-react-helmet": "^3.0.4",
-    "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "^2.0.15",
-    "gatsby-remark-copy-linked-files": "^2.0.7",
-    "gatsby-remark-images": "^3.0.1",
-    "gatsby-remark-relative-images": "^0.2.1",
-    "gatsby-source-filesystem": "^2.0.26",
-    "gatsby-transformer-remark": "^2.3.4",
-    "gatsby-transformer-sharp": "^2.1.9",
-    "lodash": "^4.17.5",
-    "lodash-webpack-plugin": "^0.11.4",
-    "netlify-cms": "^2.6.1",
-    "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.9.4",
-    "prop-types": "^15.6.0",
+    "gatsby": "^2.2.5",
+    "gatsby-image": "^2.0.34",
+    "gatsby-plugin-feed": "^2.1.0",
+    "gatsby-plugin-google-analytics": "^2.0.17",
+    "gatsby-plugin-manifest": "^2.0.24",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.10",
+    "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-plugin-typography": "^2.2.10",
+    "gatsby-remark-copy-linked-files": "^2.0.11",
+    "gatsby-remark-images": "^2.0.6",
+    "gatsby-remark-prismjs": "^3.2.6",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
+    "gatsby-remark-smartypants": "^2.0.9",
+    "gatsby-source-filesystem": "^2.0.27",
+    "gatsby-transformer-remark": "^2.3.8",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prismjs": "^1.15.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "uuid": "^3.2.1"
+    "react-typography": "^0.16.19",
+    "typeface-merriweather": "0.0.72",
+    "typeface-montserrat": "0.0.54",
+    "typography": "^0.16.19",
+    "typography-theme-wordpress-2016": "^0.16.19"
   },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  },
+  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "main": "n/a",
-  "scripts": {
-    "clean": "rimraf .cache public",
-    "start:app": "npm run develop",
-    "start:lambda": "netlify-lambda serve src/lambda",
-    "start": "run-p start:**",
-    "build:app": "npm run clean && gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda",
-    "build": "run-p build:**",
-    "develop": "npm run clean && gatsby develop",
-    "serve": "gatsby serve",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
-  "devDependencies": {
-    "http-proxy-middleware": "^0.19.1",
-    "netlify-lambda": "^1.4.3",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^1.15.3",
-    "rimraf": "^2.6.2"
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   }
 }
