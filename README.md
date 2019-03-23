@@ -1,97 +1,90 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Gatsby Tailwind Emotion Starter
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+## Getting Started
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Install Gatsby CLI:
+```sh
+npm install --global gatsby-cli
+```
 
-## 🚀 Quick start
+Create new Gatsby project using this starter:
+```sh
+gatsby new my-new-website https://github.com/muhajirdev/gatsby-tailwind-emotion-starter
+```
 
-1.  **Create a Gatsby site.**
+```sh
+cd my-new-website
+```
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## Usage
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+### Develop
 
-1.  **Start developing.**
+```
+npm run develop
+```
 
-    Navigate into your new site’s directory and start it up.
+### Build
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+```
+npm run build
+```
+Your built file will be in `/public`
 
-1.  **Open the source code and start editing!**
+This project was based on [gatsby-plugin-tailwindcss](https://github.com/muhajirdev/gatsby-plugin-tailwindcss/)
 
-    Your site is now running at `http://localhost:8000`!
+### How the heck do I use it?
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+```javascript
+import React from 'react'
+import styled from 'react-emotion'
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+const Container = styled.div`
+  ${tw`py-8`};
+`
+const Text = styled.p`
+  ${tw`bg-black text-white`};
+`
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+const Home = () => (
+  <Container>
+    <Text>I am Text component made with Tailwind CSS + EmotionJS</Text>
+  </Container>
+)
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+export default Home
+```
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+### Why would I use it?
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+Because Tailwind CSS is awesome. If you used [Tachyons](https://tachyons.io/) before. You know how awesome it utility first CSS. Compared to CSS framework like [Bootstrap](http://getbootstrap.com/). -- If you haven't try utility first CSS, give it a try. It's one of the best things in my life --. Tailwind is a more customizable version of Tachyons.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+But, because [Tailwind CSS](https://tailwindcss.com) gives you alot of class as utilities. The file size gets bloated. In fact it's 1.5 times bigger than Bootstrap. (https://tailwindcss.com/docs/controlling-file-size )
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+CSS-in-JS to save.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+Fortunately, you can use CSS-in-JS like [Emotion](https://github.com/emotion-js/emotion), to only load needed styles. So you can keep you css size small.
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+Furthremore, CSS-in-JS is just awesome. [CSS in JS: Benefits, Drawbacks, and Tooling](https://objectpartners.com/2017/11/03/css-in-js-benefits-drawbacks-and-tooling/)
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+Why Gatsby?
+Because Gatsby is blazing fast, and comes with alot of plugins
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+## For more information
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+- [Github](https://github.com/muhajirdev/gatsby-tailwind-emotion-starter)
+- [gatsby-tailwind-emotion-starter](https://github.com/muhajirdev/gatsby-tailwind-emotion-starter)
+- Got a question? [Submit an issue](https://github.com/muhajirdev/gatsby-tailwind-emotion-starter/issues/new)
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+## Contributing
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+- [Submit an idea](https://github.com/muhajirdev/gatsby-tailwind-emotion-starter/issues/new)
+- Make a pull request
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+## Related
+- [react-tailwind-emotion-starter](https://github.com/muhajirdev/react-tailwind-emotion-starter) A React + Tailwind + EmotionJs starter based on [create-react-app](https://github.com/facebook/create-react-app)
+- [vscode-tailwind-styled-snippets](https://github.com/muhajirdev/vscode-tailwind-styled-snippets)
+- [gatsby-plugin-tailwindcss](https://github.com/muhajirdev/gatsby-plugin-tailwincss)
 
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+**Enjoy!**
