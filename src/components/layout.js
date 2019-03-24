@@ -17,16 +17,16 @@ function Layout({ children }) {
         }
       `}
       render={data => (
-        <div className="flex flex-col font-sans min-h-screen text-grey-darkest">
+        <div className="flex flex-col font-sans min-h-screen text-grey-darkest bg-gray-100">
           <Header siteTitle={data.site.siteMetadata.title} />
 
-          <div className="flex flex-col flex-1 md:justify-center max-w-xl mx-auto px-4 py-8 md:p-8 w-full">
+          <div className="flex flex-col flex-1 md:justify-center container mx-auto  py-8 md:p-8 w-full">
             {children}
           </div>
 
-          <footer className="bg-blue">
-            <div className="flex justify-between max-w-xl mx-auto p-4 md:p-8 text-sm">
-              <p className="text-white">
+          <footer className="bg-gray-800 text-gray-100">
+            <div className="flex justify-between container mx-auto  p-4 md:p-8 text-sm">
+              <p className="">
                 Created by{" "}
                 <a
                   href="https://taylorbryant.blog"
@@ -39,7 +39,7 @@ function Layout({ children }) {
               <p>
                 <a
                   href="https://github.com/taylorbryant/gatsby-starter-tailwind"
-                  className="font-bold no-underline text-white"
+                  className="font-bold no-underline"
                 >
                   GitHub
                 </a>
